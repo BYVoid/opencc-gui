@@ -22,7 +22,11 @@
 #include <QLibrary>
 #include <QDir>
 #include <QCoreApplication>
-
+#include <QFileDialog>
+#include <QString>
+#include <QFile>
+#include <QTextStream>
+#include <QTextCodec>
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -41,27 +45,27 @@ void MainWindow::loadOpencc()
 {
     QLibrary libopencc("opencc");
     if (!libopencc.load())
-        ; //Library load failed
+        ; //TODO Library load failed
 
     opencc_open = (opencc_t (*)(const char *))libopencc.resolve("opencc_open");
     if (opencc_open == NULL)
-        ; //Resolve load failed
+        ; //TODO Resolve load failed
 
     opencc_close = (int (*)(opencc_t))libopencc.resolve("opencc_close");
     if (opencc_close == NULL)
-        ; //Resolve load failed
+        ; //TODO Resolve load failed
 
     opencc_convert_utf8 = (char * (*)(opencc_t, const char *, size_t))libopencc.resolve("opencc_convert_utf8");
     if (opencc_convert_utf8 == NULL)
-        ; //Resolve load failed
+        ; //TODO Resolve load failed
 
     opencc_errno = (opencc_error (*)(void))libopencc.resolve("opencc_errno");
     if (opencc_errno == NULL)
-        ; //Resolve load failed
+        ; //TODO Resolve load failed
 
     opencc_perror = (void (*)(const char *))libopencc.resolve("opencc_perror");
     if (opencc_perror == NULL)
-        ; //Resolve load failed
+        ; //TODO Resolve load failed
 }
 
 void MainWindow::convertSlot()
@@ -72,7 +76,7 @@ void MainWindow::convertSlot()
     if (od == (opencc_t) -1)
     {
         opencc_perror("Opencc");
-        return;
+        return; //TODO failed
     }
 
     QString txt_in = ui->textEdit->toPlainText();
@@ -82,7 +86,7 @@ void MainWindow::convertSlot()
     {
         opencc_perror("Opencc");
         opencc_close(od);
-        return;
+        return; //TODO failed
     }
 
     QString txt_out = QString::fromUtf8(buffer_out);
@@ -90,4 +94,54 @@ void MainWindow::convertSlot()
 
     free(buffer_out);
     opencc_close(od);
+}
+
+void MainWindow::loadSlot()
+{
+    QFileDialog * fd = new QFileDialog(this);
+    QString filters = tr("Text file(*.txt);;All files(*.*)");
+    fd->setNameFilter(filters);
+    fd->setFileMode(QFileDialog::ExistingFile);
+    fd->setAcceptMode(QFileDialog::AcceptOpen);
+    if (fd->exec() == QDialog::Accepted)
+    {
+        QString file_name = fd->selectedFiles().at(0);
+        QFile file(file_name, this);
+        if (file.open(QFile::ReadOnly))
+        {
+            QTextStream stream(&file);
+            stream.setCodec("UTF-8");
+            QString contents = stream.readAll();
+            ui->textEdit->setPlainText(contents);
+            file.close();
+        }
+    }
+    delete fd;
+}
+
+void MainWindow::saveSlot()
+{
+    QFileDialog * fd = new QFileDialog(this);
+    QString filters = tr("Text file(*.txt);;All files(*.*)");
+    fd->setNameFilter(filters);
+    fd->setFileMode(QFileDialog::AnyFile);
+    fd->setAcceptMode(QFileDialog::AcceptSave);
+    fd->setDefaultSuffix("txt");
+    if (fd->exec() == QDialog::Accepted)
+    {
+        QString file_name = fd->selectedFiles().at(0);
+        QFile file(file_name, this);
+        if (file.open(QFile::WriteOnly))
+        {
+            QString contents = ui->textEdit->toPlainText();
+            file.write(contents.toUtf8());
+            file.close();
+        }
+    }
+    delete fd;
+}
+
+void MainWindow::convertFileSlot()
+{
+
 }

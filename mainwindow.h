@@ -46,6 +46,9 @@ private:
 
 public slots:
     void convertSlot();
+    void loadSlot();
+    void saveSlot();
+    void convertFileSlot();
 };
 
 #endif // MAINWINDOW_H
