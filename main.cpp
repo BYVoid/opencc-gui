@@ -18,7 +18,7 @@
 */
 #include <QtGui/QApplication>
 #include <QTranslator>
-#include <QLocale>]
+#include <QLocale>
 #include "mainwindow.h"
 
 QTranslator * setLocale(QTranslator * trans)

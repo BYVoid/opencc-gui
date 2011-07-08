@@ -18,6 +18,7 @@
 */
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "aboutdialog.h"
 
 #include <QLibrary>
 #include <QDir>
@@ -27,6 +28,8 @@
 #include <QFile>
 #include <QTextStream>
 #include <QTextCodec>
+#include <QMessageBox>
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -146,4 +149,10 @@ void MainWindow::saveSlot()
 void MainWindow::convertFileSlot()
 {
 
+}
+
+void MainWindow::aboutSlot()
+{
+    AboutDialog dialog;
+    dialog.exec();
 }

@@ -91,8 +91,15 @@
     <addaction name="separator"/>
     <addaction name="actionSelect_All"/>
    </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menu_Edit"/>
+   <addaction name="menuHelp"/>
   </widget>
   <action name="actionLoad">
    <property name="text">
@@ -152,6 +159,11 @@
   <action name="actionSelect_All">
    <property name="text">
     <string>Select &amp;All</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>&amp;About</string>
    </property>
   </action>
  </widget>
@@ -350,11 +362,28 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>actionAbout</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>aboutSlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>319</x>
+     <y>239</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>convertSlot()</slot>
   <slot>loadSlot()</slot>
   <slot>saveSlot()</slot>
   <slot>convertFileSlot()</slot>
+  <slot>aboutSlot()</slot>
  </slots>
 </ui>
