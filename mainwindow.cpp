@@ -21,18 +21,17 @@
 #include "aboutdialog.h"
 #include "convertfiledialog.h"
 #include "fileselector.h"
+#include "converter.h"
 
 #include <QString>
 #include <QFile>
 #include <QTextStream>
 #include <QTextCodec>
 #include <QLocale>
-#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
-    opencc(new Converter),
     trans(new QTranslator),
     textreader(new TextReader)
 {
@@ -43,7 +42,6 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
     delete ui;
-    delete opencc;
     delete trans;
     delete textreader;
 }
@@ -52,30 +50,10 @@ void MainWindow::convertSlot()
 {
     const char *config = ui->rbToChs->isChecked()? OPENCC_DEFAULT_CONFIG_TRAD_TO_SIMP
                                                  : OPENCC_DEFAULT_CONFIG_SIMP_TO_TRAD;
-    opencc_t od = opencc->opencc_open(config);
-    if (od == (opencc_t) -1)
-    {
-        opencc->opencc_perror("Opencc loading:");
-        return; //TODO failed
-    }
-
+    Converter conv(config);
     QString txt_in = ui->textEdit->toPlainText();
-    QByteArray txt_in_utf8 = txt_in.toUtf8();
-    const char * buffer_in = txt_in_utf8.data();
-
-    char * buffer_out = opencc->opencc_convert_utf8(od, buffer_in, -1);
-    if (buffer_out == (char *) -1)
-    {
-        opencc->opencc_perror("Opencc runtime:");
-        opencc->opencc_close(od);
-        return; //TODO failed
-    }
-
-    QString txt_out = QString::fromUtf8(buffer_out);
+    QString txt_out = conv.convert(txt_in);
     ui->textEdit->setPlainText(txt_out);
-
-    free(buffer_out);
-    opencc->opencc_close(od);
 }
 
 void MainWindow::loadSlot()

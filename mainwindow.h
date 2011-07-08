@@ -19,7 +19,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include "converter.h"
 #include "textreader.h"
 
 #include <QMainWindow>
@@ -40,7 +39,6 @@ public:
 private:
     enum Language {ENG, ZHT, ZHS};
     Ui::MainWindow *ui;
-    Converter * opencc;
     QTranslator * trans;
     TextReader * textreader;
 
