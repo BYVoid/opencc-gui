@@ -20,6 +20,7 @@
 #define MAINWINDOW_H
 
 #include "converter.h"
+#include "textreader.h"
 
 #include <QMainWindow>
 #include <QTranslator>
@@ -41,6 +42,7 @@ private:
     Ui::MainWindow *ui;
     Converter * opencc;
     QTranslator * trans;
+    TextReader * textreader;
 
     Language language;
     void setDefaultLanguage();

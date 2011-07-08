@@ -10,7 +10,8 @@
 ConvertFileDialog::ConvertFileDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ConvertFileDialog),
-    opencc(new Converter)
+    opencc(new Converter),
+    textreader(new TextReader)
 {
     ui->setupUi(this);
 }
@@ -18,6 +19,8 @@ ConvertFileDialog::ConvertFileDialog(QWidget *parent) :
 ConvertFileDialog::~ConvertFileDialog()
 {
     delete ui;
+    delete opencc;
+    delete textreader;
 }
 
 void ConvertFileDialog::convertSlot()
@@ -29,10 +32,9 @@ void ConvertFileDialog::convertSlot()
         QMessageBox::critical(this, tr("OpenCC"), tr("Input file not readable."));
         return;
     }
-    QTextStream stream(&input_file);
-    stream.setCodec("UTF-8");
-    QString contents = stream.readAll();
     input_file.close();
+
+    QString contents = textreader->readAll(input_file_name);
 
     QString output_file_name = ui->leOutput->text();
     QFile output_file(output_file_name, this);

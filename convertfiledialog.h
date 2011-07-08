@@ -2,6 +2,7 @@
 #define CONVERTFILEDIALOG_H
 
 #include "converter.h"
+#include "textreader.h"
 
 #include <QDialog>
 
@@ -20,6 +21,8 @@ public:
 private:
     Ui::ConvertFileDialog *ui;
     Converter * opencc;
+    TextReader * textreader;
+
 
 public slots:
     void convertSlot();

@@ -33,7 +33,8 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
     opencc(new Converter),
-    trans(new QTranslator)
+    trans(new QTranslator),
+    textreader(new TextReader)
 {
     ui->setupUi(this);
     setDefaultLanguage();
@@ -42,6 +43,9 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
     delete ui;
+    delete opencc;
+    delete trans;
+    delete textreader;
 }
 
 void MainWindow::convertSlot()
@@ -79,16 +83,7 @@ void MainWindow::loadSlot()
     FileSelector fs(this);
     if (fs.open() == QDialog::Accepted)
     {
-        QString file_name = fs.selectedFile();
-        QFile file(file_name, this);
-        if (file.open(QFile::ReadOnly))
-        {
-            QTextStream stream(&file);
-            stream.setCodec("UTF-8");
-            QString contents = stream.readAll();
-            ui->textEdit->setPlainText(contents);
-            file.close();
-        }
+        ui->textEdit->setPlainText(textreader->readAll(fs.selectedFile()));
     }
 }
 
@@ -161,22 +156,20 @@ void MainWindow::changeLanguage()
     ui->actionEnglish->setChecked(false);
     ui->actionTraditional_Chinese->setChecked(false);
     ui->actionSimplified_Chinese->setChecked(false);
-    bool ret;
 
-    //QApplication::instance()->removeTranslator(trans);
     switch (language)
     {
     case ZHT:
-        ret = trans->load("zht.qm");
+        trans->load("zht.qm");
         ui->actionTraditional_Chinese->setChecked(true);
         break;
     case ZHS:
-        ret = trans->load("zhs.qm");
+        trans->load("zhs.qm");
         ui->actionSimplified_Chinese->setChecked(true);
         break;
     case ENG:
     default:
-        ret = trans->load("");
+        trans->load("");
         ui->actionEnglish->setChecked(true);
     }
     ui->retranslateUi(this);

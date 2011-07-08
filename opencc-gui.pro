@@ -14,7 +14,9 @@ SOURCES += main.cpp\
     aboutdialog.cpp \
     convertfiledialog.cpp \
     converter.cpp \
-    fileselector.cpp
+    fileselector.cpp \
+    charsetdetector.cpp \
+    textreader.cpp
 
 HEADERS  += mainwindow.h \
     opencc.h \
@@ -22,7 +24,10 @@ HEADERS  += mainwindow.h \
     aboutdialog.h \
     convertfiledialog.h \
     converter.h \
-    fileselector.h
+    fileselector.h \
+    uchardet.h \
+    charsetdetector.h \
+    textreader.h
 
 FORMS    += mainwindow.ui \
     aboutdialog.ui \
