@@ -11,15 +11,22 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    aboutdialog.cpp
+    aboutdialog.cpp \
+    convertfiledialog.cpp \
+    converter.cpp \
+    fileselector.cpp
 
 HEADERS  += mainwindow.h \
     opencc.h \
     opencc_types.h \
-    aboutdialog.h
+    aboutdialog.h \
+    convertfiledialog.h \
+    converter.h \
+    fileselector.h
 
 FORMS    += mainwindow.ui \
-    aboutdialog.ui
+    aboutdialog.ui \
+    convertfiledialog.ui
 
 TRANSLATIONS += zhs.ts \
     zht.ts

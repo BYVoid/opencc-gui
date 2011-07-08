@@ -19,24 +19,20 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "aboutdialog.h"
+#include "convertfiledialog.h"
+#include "fileselector.h"
 
-#include <QLibrary>
-#include <QDir>
-#include <QCoreApplication>
-#include <QFileDialog>
 #include <QString>
 #include <QFile>
 #include <QTextStream>
 #include <QTextCodec>
-#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::MainWindow)
+    ui(new Ui::MainWindow),
+    opencc(new Converter)
 {
     ui->setupUi(this);
-    QDir::setCurrent(QCoreApplication::applicationDirPath());
-    loadOpencc();
 }
 
 MainWindow::~MainWindow()
@@ -44,41 +40,14 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::loadOpencc()
-{
-    QLibrary libopencc("opencc");
-    if (!libopencc.load())
-        ; //TODO Library load failed
-
-    opencc_open = (opencc_t (*)(const char *))libopencc.resolve("opencc_open");
-    if (opencc_open == NULL)
-        ; //TODO Resolve load failed
-
-    opencc_close = (int (*)(opencc_t))libopencc.resolve("opencc_close");
-    if (opencc_close == NULL)
-        ; //TODO Resolve load failed
-
-    opencc_convert_utf8 = (char * (*)(opencc_t, const char *, size_t))libopencc.resolve("opencc_convert_utf8");
-    if (opencc_convert_utf8 == NULL)
-        ; //TODO Resolve load failed
-
-    opencc_errno = (opencc_error (*)(void))libopencc.resolve("opencc_errno");
-    if (opencc_errno == NULL)
-        ; //TODO Resolve load failed
-
-    opencc_perror = (void (*)(const char *))libopencc.resolve("opencc_perror");
-    if (opencc_perror == NULL)
-        ; //TODO Resolve load failed
-}
-
 void MainWindow::convertSlot()
 {
     const char *config = ui->rbToChs->isChecked()? OPENCC_DEFAULT_CONFIG_TRAD_TO_SIMP
                                                  : OPENCC_DEFAULT_CONFIG_SIMP_TO_TRAD;
-    opencc_t od = opencc_open(config);
+    opencc_t od = opencc->opencc_open(config);
     if (od == (opencc_t) -1)
     {
-        opencc_perror("Opencc loading:");
+        opencc->opencc_perror("Opencc loading:");
         return; //TODO failed
     }
 
@@ -86,11 +55,11 @@ void MainWindow::convertSlot()
     QByteArray txt_in_utf8 = txt_in.toUtf8();
     const char * buffer_in = txt_in_utf8.data();
 
-    char * buffer_out = opencc_convert_utf8(od, buffer_in, -1);
+    char * buffer_out = opencc->opencc_convert_utf8(od, buffer_in, -1);
     if (buffer_out == (char *) -1)
     {
-        opencc_perror("Opencc runtime:");
-        opencc_close(od);
+        opencc->opencc_perror("Opencc runtime:");
+        opencc->opencc_close(od);
         return; //TODO failed
     }
 
@@ -98,19 +67,15 @@ void MainWindow::convertSlot()
     ui->textEdit->setPlainText(txt_out);
 
     free(buffer_out);
-    opencc_close(od);
+    opencc->opencc_close(od);
 }
 
 void MainWindow::loadSlot()
 {
-    QFileDialog * fd = new QFileDialog(this);
-    QString filters = tr("Text file(*.txt);;All files(*.*)");
-    fd->setNameFilter(filters);
-    fd->setFileMode(QFileDialog::ExistingFile);
-    fd->setAcceptMode(QFileDialog::AcceptOpen);
-    if (fd->exec() == QDialog::Accepted)
+    FileSelector fs(this);
+    if (fs.open() == QDialog::Accepted)
     {
-        QString file_name = fd->selectedFiles().at(0);
+        QString file_name = fs.selectedFile();
         QFile file(file_name, this);
         if (file.open(QFile::ReadOnly))
         {
@@ -121,20 +86,14 @@ void MainWindow::loadSlot()
             file.close();
         }
     }
-    delete fd;
 }
 
 void MainWindow::saveSlot()
 {
-    QFileDialog * fd = new QFileDialog(this);
-    QString filters = tr("Text file(*.txt);;All files(*.*)");
-    fd->setNameFilter(filters);
-    fd->setFileMode(QFileDialog::AnyFile);
-    fd->setAcceptMode(QFileDialog::AcceptSave);
-    fd->setDefaultSuffix("txt");
-    if (fd->exec() == QDialog::Accepted)
+    FileSelector fs(this);
+    if (fs.save() == QDialog::Accepted)
     {
-        QString file_name = fd->selectedFiles().at(0);
+        QString file_name = fs.selectedFile();
         QFile file(file_name, this);
         if (file.open(QFile::WriteOnly))
         {
@@ -143,12 +102,12 @@ void MainWindow::saveSlot()
             file.close();
         }
     }
-    delete fd;
 }
 
 void MainWindow::convertFileSlot()
 {
-
+    ConvertFileDialog dialog;
+    dialog.exec();
 }
 
 void MainWindow::aboutSlot()

@@ -19,8 +19,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "converter.h"
+
 #include <QMainWindow>
-#include "opencc.h"
 
 namespace Ui {
     class MainWindow;
@@ -35,14 +36,8 @@ public:
     ~MainWindow();
 
 private:
-    void loadOpencc();
-    opencc_t (*opencc_open)(const char *);
-    int (*opencc_close)(opencc_t);
-    char * (*opencc_convert_utf8)(opencc_t, const char *, size_t);
-    opencc_error (*opencc_errno)(void);
-    void (*opencc_perror)(const char * spec);
-
     Ui::MainWindow *ui;
+    Converter * opencc;
 
 public slots:
     void convertSlot();
