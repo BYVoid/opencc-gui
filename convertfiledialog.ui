@@ -6,14 +6,136 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>300</width>
-    <height>100</height>
+    <width>400</width>
+    <height>120</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Convert a file</string>
   </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="lbInput">
+     <property name="text">
+      <string>Input File</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lbOutput">
+     <property name="text">
+      <string>Output File</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLineEdit" name="leOutput">
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QToolButton" name="tbOutput">
+     <property name="text">
+      <string>...</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QPushButton" name="btnConvert">
+     <property name="text">
+      <string>Convert</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QRadioButton" name="rbToCht">
+     <property name="text">
+      <string>From Simplified to Tradtional</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QLineEdit" name="leInput">
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2">
+    <widget class="QToolButton" name="tbInput">
+     <property name="text">
+      <string>...</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QRadioButton" name="rbToChs">
+     <property name="text">
+      <string>From Tradtional to Simplified</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>btnConvert</sender>
+   <signal>clicked()</signal>
+   <receiver>ConvertFileDialog</receiver>
+   <slot>convertSlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>46</x>
+     <y>77</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>49</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tbInput</sender>
+   <signal>clicked()</signal>
+   <receiver>ConvertFileDialog</receiver>
+   <slot>openSlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>372</x>
+     <y>17</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>49</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tbOutput</sender>
+   <signal>clicked()</signal>
+   <receiver>ConvertFileDialog</receiver>
+   <slot>saveSlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>372</x>
+     <y>46</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>49</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>openSlot()</slot>
+  <slot>saveSlot()</slot>
+  <slot>convertSlot()</slot>
+ </slots>
 </ui>

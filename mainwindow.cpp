@@ -26,13 +26,17 @@
 #include <QFile>
 #include <QTextStream>
 #include <QTextCodec>
+#include <QLocale>
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
-    opencc(new Converter)
+    opencc(new Converter),
+    trans(new QTranslator)
 {
     ui->setupUi(this);
+    setDefaultLanguage();
 }
 
 MainWindow::~MainWindow()
@@ -114,4 +118,66 @@ void MainWindow::aboutSlot()
 {
     AboutDialog dialog;
     dialog.exec();
+}
+
+void MainWindow::setDefaultLanguage()
+{
+    QLocale loc;
+    if (loc.language() == QLocale::Chinese)
+    {
+        if (loc.country() == QLocale::China)
+            language = ZHS;
+        else
+            language = ZHT;
+    }
+    else
+    {
+        language = ENG;
+    }
+    QApplication::instance()->installTranslator(trans);
+    changeLanguage();
+}
+
+void MainWindow::changeLanguageToEngSlot()
+{
+    language = ENG;
+    changeLanguage();
+}
+
+void MainWindow::changeLanguageToZhtSlot()
+{
+    language = ZHT;
+    changeLanguage();
+}
+
+void MainWindow::changeLanguageToZhsSlot()
+{
+    language = ZHS;
+    changeLanguage();
+}
+
+void MainWindow::changeLanguage()
+{
+    ui->actionEnglish->setChecked(false);
+    ui->actionTraditional_Chinese->setChecked(false);
+    ui->actionSimplified_Chinese->setChecked(false);
+    bool ret;
+
+    //QApplication::instance()->removeTranslator(trans);
+    switch (language)
+    {
+    case ZHT:
+        ret = trans->load("zht.qm");
+        ui->actionTraditional_Chinese->setChecked(true);
+        break;
+    case ZHS:
+        ret = trans->load("zhs.qm");
+        ui->actionSimplified_Chinese->setChecked(true);
+        break;
+    case ENG:
+    default:
+        ret = trans->load("");
+        ui->actionEnglish->setChecked(true);
+    }
+    ui->retranslateUi(this);
 }

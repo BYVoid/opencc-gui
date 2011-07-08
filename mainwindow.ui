@@ -79,6 +79,14 @@
     <property name="title">
      <string>&amp;Edit</string>
     </property>
+    <widget class="QMenu" name="menuLanguage">
+     <property name="title">
+      <string>Language</string>
+     </property>
+     <addaction name="actionEnglish"/>
+     <addaction name="actionTraditional_Chinese"/>
+     <addaction name="actionSimplified_Chinese"/>
+    </widget>
     <addaction name="actionUndo"/>
     <addaction name="actionRedo"/>
     <addaction name="separator"/>
@@ -90,6 +98,8 @@
     <addaction name="actionDelete"/>
     <addaction name="separator"/>
     <addaction name="actionSelect_All"/>
+    <addaction name="separator"/>
+    <addaction name="menuLanguage"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -119,7 +129,7 @@
   </action>
   <action name="actionConvert_file">
    <property name="text">
-    <string>&amp;Convert file...</string>
+    <string>&amp;Convert a file...</string>
    </property>
   </action>
   <action name="actionClear">
@@ -191,6 +201,30 @@
   <action name="actionAbout">
    <property name="text">
     <string>&amp;About</string>
+   </property>
+  </action>
+  <action name="actionEnglish">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>English</string>
+   </property>
+  </action>
+  <action name="actionTraditional_Chinese">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Traditional Chinese</string>
+   </property>
+  </action>
+  <action name="actionSimplified_Chinese">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Simplified Chinese</string>
    </property>
   </action>
  </widget>
@@ -405,6 +439,54 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>actionEnglish</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>changeLanguageToEngSlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>319</x>
+     <y>239</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSimplified_Chinese</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>changeLanguageToZhsSlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>319</x>
+     <y>239</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionTraditional_Chinese</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>changeLanguageToZhtSlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>319</x>
+     <y>239</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>convertSlot()</slot>
@@ -412,5 +494,8 @@
   <slot>saveSlot()</slot>
   <slot>convertFileSlot()</slot>
   <slot>aboutSlot()</slot>
+  <slot>changeLanguageToEngSlot()</slot>
+  <slot>changeLanguageToZhsSlot()</slot>
+  <slot>changeLanguageToZhtSlot()</slot>
  </slots>
 </ui>

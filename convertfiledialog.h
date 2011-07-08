@@ -1,6 +1,8 @@
 #ifndef CONVERTFILEDIALOG_H
 #define CONVERTFILEDIALOG_H
 
+#include "converter.h"
+
 #include <QDialog>
 
 namespace Ui {
@@ -17,6 +19,12 @@ public:
 
 private:
     Ui::ConvertFileDialog *ui;
+    Converter * opencc;
+
+public slots:
+    void convertSlot();
+    void openSlot();
+    void saveSlot();
 };
 
 #endif // CONVERTFILEDIALOG_H

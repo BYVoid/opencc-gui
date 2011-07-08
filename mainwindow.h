@@ -22,6 +22,7 @@
 #include "converter.h"
 
 #include <QMainWindow>
+#include <QTranslator>
 
 namespace Ui {
     class MainWindow;
@@ -36,8 +37,14 @@ public:
     ~MainWindow();
 
 private:
+    enum Language {ENG, ZHT, ZHS};
     Ui::MainWindow *ui;
     Converter * opencc;
+    QTranslator * trans;
+
+    Language language;
+    void setDefaultLanguage();
+    void changeLanguage();
 
 public slots:
     void convertSlot();
@@ -45,6 +52,9 @@ public slots:
     void saveSlot();
     void convertFileSlot();
     void aboutSlot();
+    void changeLanguageToEngSlot();
+    void changeLanguageToZhtSlot();
+    void changeLanguageToZhsSlot();
 };
 
 #endif // MAINWINDOW_H

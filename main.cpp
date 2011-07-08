@@ -17,29 +17,12 @@
 * limitations under the License.
 */
 #include <QtGui/QApplication>
-#include <QTranslator>
-#include <QLocale>
-#include "mainwindow.h"
 
-QTranslator * setLocale(QTranslator * trans)
-{
-    QLocale loc;
-    if (loc.language() == QLocale::Chinese)
-    {
-        if (loc.country() == QLocale::China)
-            trans->load("zhs.qm");
-        else
-            trans->load("zht.qm");
-    }
-    return trans;
-}
+#include "mainwindow.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    QTranslator trans;
-
-    a.installTranslator(setLocale(&trans));
     MainWindow w;
     w.show();
 
