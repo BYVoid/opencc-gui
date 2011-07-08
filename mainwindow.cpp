@@ -75,16 +75,18 @@ void MainWindow::convertSlot()
     opencc_t od = opencc_open(config);
     if (od == (opencc_t) -1)
     {
-        opencc_perror("Opencc");
+        opencc_perror("Opencc loading:");
         return; //TODO failed
     }
 
     QString txt_in = ui->textEdit->toPlainText();
-    char * buffer_in = txt_in.toUtf8().data();
+    QByteArray txt_in_utf8 = txt_in.toUtf8();
+    const char * buffer_in = txt_in_utf8.data();
+
     char * buffer_out = opencc_convert_utf8(od, buffer_in, -1);
     if (buffer_out == (char *) -1)
     {
-        opencc_perror("Opencc");
+        opencc_perror("Opencc runtime:");
         opencc_close(od);
         return; //TODO failed
     }
