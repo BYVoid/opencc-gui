@@ -10,7 +10,7 @@
         <translation>关于开放中文转换</translation>
     </message>
     <message>
-        <location filename="aboutdialog.ui" line="45"/>
+        <location filename="aboutdialog.ui" line="32"/>
         <source>Open Chinese Convert
 
 http://opencc.googlecode.com
@@ -22,23 +22,38 @@ http://opencc.googlecode.com
 
 作者: BYVoid &lt;byvoid.kcp@gmail.com&gt;</translation>
     </message>
+    <message>
+        <location filename="aboutdialog.ui" line="45"/>
+        <source>Modules</source>
+        <translation>模块</translation>
+    </message>
+    <message>
+        <location filename="aboutdialog.cpp" line="13"/>
+        <source>Loaded</source>
+        <translation>已载入</translation>
+    </message>
+    <message>
+        <location filename="aboutdialog.cpp" line="14"/>
+        <source>Failed to load</source>
+        <translation>载入失败</translation>
+    </message>
 </context>
 <context>
     <name>ConvertFileDialog</name>
     <message>
         <location filename="convertfiledialog.ui" line="14"/>
         <source>Convert a file</source>
-        <translation>转换文档</translation>
+        <translation>转换文件</translation>
     </message>
     <message>
         <location filename="convertfiledialog.ui" line="20"/>
         <source>Input File</source>
-        <translation>输入文档</translation>
+        <translation>输入文件</translation>
     </message>
     <message>
         <location filename="convertfiledialog.ui" line="27"/>
         <source>Output File</source>
-        <translation>输出文档</translation>
+        <translation>输出文件</translation>
     </message>
     <message>
         <location filename="convertfiledialog.ui" line="41"/>
@@ -63,23 +78,29 @@ http://opencc.googlecode.com
     </message>
     <message>
         <location filename="convertfiledialog.cpp" line="29"/>
-        <location filename="convertfiledialog.cpp" line="41"/>
-        <location filename="convertfiledialog.cpp" line="70"/>
+        <location filename="convertfiledialog.cpp" line="37"/>
+        <location filename="convertfiledialog.cpp" line="46"/>
+        <location filename="convertfiledialog.cpp" line="60"/>
         <source>OpenCC</source>
         <translation>开放中文转换</translation>
     </message>
     <message>
         <location filename="convertfiledialog.cpp" line="29"/>
+        <source>Failed to load opencc.</source>
+        <translation>opencc载入失败。</translation>
+    </message>
+    <message>
+        <location filename="convertfiledialog.cpp" line="37"/>
         <source>Input file not readable.</source>
-        <translation>无法读取输入文档。</translation>
+        <translation>无法读取输入文件。</translation>
     </message>
     <message>
-        <location filename="convertfiledialog.cpp" line="41"/>
+        <location filename="convertfiledialog.cpp" line="46"/>
         <source>Output file not writable.</source>
-        <translation>无法读取输出文档。</translation>
+        <translation>无法读取输出文件。</translation>
     </message>
     <message>
-        <location filename="convertfiledialog.cpp" line="70"/>
+        <location filename="convertfiledialog.cpp" line="60"/>
         <source>Successfully converted.</source>
         <translation>转换成功。</translation>
     </message>
@@ -89,7 +110,7 @@ http://opencc.googlecode.com
     <message>
         <location filename="fileselector.cpp" line="6"/>
         <source>Text file(*.txt);;All files(*.*)</source>
-        <translation>文本文档(*.txt);;所有文档(*.*)</translation>
+        <translation>文本文件(*.txt);;所有文件(*.*)</translation>
     </message>
 </context>
 <context>
@@ -117,7 +138,7 @@ http://opencc.googlecode.com
     <message>
         <location filename="mainwindow.ui" line="69"/>
         <source>&amp;File</source>
-        <translation>文档(&amp;F)</translation>
+        <translation>文件(&amp;F)</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="80"/>
@@ -147,7 +168,7 @@ http://opencc.googlecode.com
     <message>
         <location filename="mainwindow.ui" line="132"/>
         <source>&amp;Convert a file...</source>
-        <translation>转换文档(&amp;C)...</translation>
+        <translation>转换文件(&amp;C)...</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="137"/>
@@ -213,6 +234,16 @@ http://opencc.googlecode.com
         <location filename="mainwindow.ui" line="227"/>
         <source>Simplified Chinese</source>
         <translation>简体中文</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="54"/>
+        <source>OpenCC</source>
+        <translation>开放中文转换</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="54"/>
+        <source>Failed to load opencc.</source>
+        <translation>opencc载入失败。</translation>
     </message>
 </context>
 </TS>

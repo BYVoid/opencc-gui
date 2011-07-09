@@ -49,28 +49,28 @@ Author: BYVoid &lt;byvoid.kcp@gmail.com&gt;</string>
       <item row="1" column="0">
        <widget class="QLabel" name="lbOpencc">
         <property name="text">
-         <string>opencc</string>
+         <string notr="true">opencc</string>
         </property>
        </widget>
       </item>
       <item row="2" column="0">
        <widget class="QLabel" name="lbUchardet">
         <property name="text">
-         <string>uchardet</string>
+         <string notr="true">uchardet</string>
         </property>
        </widget>
       </item>
       <item row="1" column="1">
        <widget class="QLabel" name="lOpencc">
         <property name="text">
-         <string>TextLabel</string>
+         <string notr="true">TextLabel</string>
         </property>
        </widget>
       </item>
       <item row="2" column="1">
        <widget class="QLabel" name="lUchardet">
         <property name="text">
-         <string>TextLabel</string>
+         <string notr="true">TextLabel</string>
         </property>
        </widget>
       </item>

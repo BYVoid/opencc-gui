@@ -10,7 +10,7 @@
         <translation>關於開放中文轉換</translation>
     </message>
     <message>
-        <location filename="aboutdialog.ui" line="45"/>
+        <location filename="aboutdialog.ui" line="32"/>
         <source>Open Chinese Convert
 
 http://opencc.googlecode.com
@@ -21,6 +21,21 @@ Author: BYVoid &lt;byvoid.kcp@gmail.com&gt;</source>
 http://opencc.googlecode.com
 
 作者: BYVoid &lt;byvoid.kcp@gmail.com&gt;</translation>
+    </message>
+    <message>
+        <location filename="aboutdialog.ui" line="45"/>
+        <source>Modules</source>
+        <translation>模組</translation>
+    </message>
+    <message>
+        <location filename="aboutdialog.cpp" line="13"/>
+        <source>Loaded</source>
+        <translation>已載入</translation>
+    </message>
+    <message>
+        <location filename="aboutdialog.cpp" line="14"/>
+        <source>Failed to load</source>
+        <translation>載入失敗</translation>
     </message>
 </context>
 <context>
@@ -63,23 +78,29 @@ http://opencc.googlecode.com
     </message>
     <message>
         <location filename="convertfiledialog.cpp" line="29"/>
-        <location filename="convertfiledialog.cpp" line="41"/>
-        <location filename="convertfiledialog.cpp" line="70"/>
+        <location filename="convertfiledialog.cpp" line="37"/>
+        <location filename="convertfiledialog.cpp" line="46"/>
+        <location filename="convertfiledialog.cpp" line="60"/>
         <source>OpenCC</source>
         <translation>開放中文轉換</translation>
     </message>
     <message>
         <location filename="convertfiledialog.cpp" line="29"/>
+        <source>Failed to load opencc.</source>
+        <translation>opencc載入失敗。</translation>
+    </message>
+    <message>
+        <location filename="convertfiledialog.cpp" line="37"/>
         <source>Input file not readable.</source>
         <translation>無法讀取輸入檔案。</translation>
     </message>
     <message>
-        <location filename="convertfiledialog.cpp" line="41"/>
+        <location filename="convertfiledialog.cpp" line="46"/>
         <source>Output file not writable.</source>
         <translation>無法讀取輸出檔案。</translation>
     </message>
     <message>
-        <location filename="convertfiledialog.cpp" line="70"/>
+        <location filename="convertfiledialog.cpp" line="60"/>
         <source>Successfully converted.</source>
         <translation>轉換成功。</translation>
     </message>
@@ -167,7 +188,7 @@ http://opencc.googlecode.com
     <message>
         <location filename="mainwindow.ui" line="158"/>
         <source>Redo</source>
-        <translation>重做</translation>
+        <translation>取消復原</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="166"/>
@@ -213,6 +234,16 @@ http://opencc.googlecode.com
         <location filename="mainwindow.ui" line="227"/>
         <source>Simplified Chinese</source>
         <translation>簡體中文</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="54"/>
+        <source>OpenCC</source>
+        <translation>開放中文轉換</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="54"/>
+        <source>Failed to load opencc.</source>
+        <translation>opencc載入失敗。</translation>
     </message>
 </context>
 </TS>
