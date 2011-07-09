@@ -44,6 +44,9 @@ void Converter::initialize()
 
 bool Converter::loaded()
 {
+    if (!initialized)
+        initialize();
+
     return s_loaded;
 }
 
