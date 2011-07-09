@@ -21,7 +21,14 @@ QString TextReader::readAll(QString filename)
 
     QByteArray buffer = file.readAll();
     QTextStream stream(buffer);
-    charset = cd.detect(buffer);
+    if (cd.loaded())
+    {
+        charset = cd.detect(buffer);
+    }
+    else
+    {
+        charset = "UTF-8";
+    }
     QByteArray charset_name_utf8 = charset.toUtf8();
 
     stream.setCodec(charset_name_utf8.data());

@@ -12,10 +12,13 @@ public:
     void setConfig(const char * config);
     QString convert(QString & text);
 
+    static bool loaded();
+
 private:
     opencc_t handle;
 
     static bool initialized;
+    static bool s_loaded;
     static opencc_t (*opencc_open)(const char *);
     static int (*opencc_close)(opencc_t);
     static char * (*opencc_convert_utf8)(opencc_t, const char *, size_t);
