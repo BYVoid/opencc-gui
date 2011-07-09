@@ -28,6 +28,7 @@
 #include <QTextStream>
 #include <QTextCodec>
 #include <QLocale>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -48,6 +49,12 @@ MainWindow::~MainWindow()
 
 void MainWindow::convertSlot()
 {
+    if (!Converter::loaded())
+    {
+        QMessageBox::critical(this, tr("OpenCC"), tr("Failed to load opencc."));
+        return;
+    }
+
     const char *config = ui->rbToChs->isChecked()? OPENCC_DEFAULT_CONFIG_TRAD_TO_SIMP
                                                  : OPENCC_DEFAULT_CONFIG_SIMP_TO_TRAD;
     Converter conv(config);

@@ -39,11 +39,19 @@ CharsetDetector::CharsetDetector()
     if (!initialized)
         initialize();
 
+    handle = NULL;
+
+    if (!s_loaded)
+        return;
+
     handle = uchardet_new();
 }
 
 CharsetDetector::~CharsetDetector()
 {
+    if (!s_loaded)
+        return;
+
     uchardet_delete(handle);
 }
 

@@ -61,12 +61,18 @@ Converter::Converter(const char * config)
 
 Converter::~Converter()
 {
+    if (!s_loaded)
+        return;
+
     if (handle != NULL)
         opencc_close(handle);
 }
 
 void Converter::setConfig(const char *config)
 {
+    if (!s_loaded)
+        return;
+
     if (handle != NULL)
         opencc_close(handle);
 

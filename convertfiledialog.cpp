@@ -24,6 +24,12 @@ ConvertFileDialog::~ConvertFileDialog()
 
 void ConvertFileDialog::convertSlot()
 {
+    if (!Converter::loaded())
+    {
+        QMessageBox::critical(this, tr("OpenCC"), tr("Failed to load opencc."));
+        return;
+    }
+
     QString input_file_name = ui->leInput->text();
     QFile input_file(input_file_name, this);
     if (!input_file.open(QFile::ReadOnly))
@@ -32,8 +38,6 @@ void ConvertFileDialog::convertSlot()
         return;
     }
     input_file.close();
-
-
 
     QString output_file_name = ui->leOutput->text();
     QFile output_file(output_file_name, this);
