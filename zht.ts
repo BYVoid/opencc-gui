@@ -28,17 +28,17 @@ http://opencc.googlecode.com
     <message>
         <location filename="convertfiledialog.ui" line="14"/>
         <source>Convert a file</source>
-        <translation>轉換文檔</translation>
+        <translation>轉換檔案</translation>
     </message>
     <message>
         <location filename="convertfiledialog.ui" line="20"/>
         <source>Input File</source>
-        <translation>輸入文檔</translation>
+        <translation>輸入檔案</translation>
     </message>
     <message>
         <location filename="convertfiledialog.ui" line="27"/>
         <source>Output File</source>
-        <translation>輸出文檔</translation>
+        <translation>輸出檔案</translation>
     </message>
     <message>
         <location filename="convertfiledialog.ui" line="41"/>
@@ -71,12 +71,12 @@ http://opencc.googlecode.com
     <message>
         <location filename="convertfiledialog.cpp" line="29"/>
         <source>Input file not readable.</source>
-        <translation>無法讀取輸入文檔。</translation>
+        <translation>無法讀取輸入檔案。</translation>
     </message>
     <message>
         <location filename="convertfiledialog.cpp" line="41"/>
         <source>Output file not writable.</source>
-        <translation>無法讀取輸出文檔。</translation>
+        <translation>無法讀取輸出檔案。</translation>
     </message>
     <message>
         <location filename="convertfiledialog.cpp" line="70"/>
@@ -89,7 +89,7 @@ http://opencc.googlecode.com
     <message>
         <location filename="fileselector.cpp" line="6"/>
         <source>Text file(*.txt);;All files(*.*)</source>
-        <translation>文本文檔(*.txt);;所有文檔(*.*)</translation>
+        <translation>文字檔案(*.txt);;所有檔案(*.*)</translation>
     </message>
 </context>
 <context>
@@ -117,7 +117,7 @@ http://opencc.googlecode.com
     <message>
         <location filename="mainwindow.ui" line="69"/>
         <source>&amp;File</source>
-        <translation>文檔(&amp;F)</translation>
+        <translation>檔案(&amp;F)</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="80"/>
@@ -132,22 +132,22 @@ http://opencc.googlecode.com
     <message>
         <location filename="mainwindow.ui" line="106"/>
         <source>&amp;Help</source>
-        <translation>幫助(&amp;H)</translation>
+        <translation>說明(&amp;H)</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="116"/>
         <source>&amp;Load...</source>
-        <translation>打開(&amp;L)...</translation>
+        <translation>開啟(&amp;L)...</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="124"/>
         <source>&amp;Save...</source>
-        <translation>保存(&amp;S)...</translation>
+        <translation>儲存(&amp;S)...</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="132"/>
         <source>&amp;Convert a file...</source>
-        <translation>轉換文檔(&amp;C)...</translation>
+        <translation>轉換檔案(&amp;C)...</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="137"/>
@@ -162,7 +162,7 @@ http://opencc.googlecode.com
     <message>
         <location filename="mainwindow.ui" line="150"/>
         <source>Undo</source>
-        <translation>撤銷</translation>
+        <translation>復原</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="158"/>
@@ -172,7 +172,7 @@ http://opencc.googlecode.com
     <message>
         <location filename="mainwindow.ui" line="166"/>
         <source>Cu&amp;t</source>
-        <translation>剪切(&amp;u)</translation>
+        <translation>剪下(&amp;u)</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="174"/>
@@ -182,7 +182,7 @@ http://opencc.googlecode.com
     <message>
         <location filename="mainwindow.ui" line="182"/>
         <source>&amp;Paste</source>
-        <translation>粘貼(&amp;P)</translation>
+        <translation>貼上(&amp;P)</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="190"/>
