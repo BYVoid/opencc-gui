@@ -13,7 +13,9 @@ void (*Converter::opencc_perror)(const char * spec);
 
 void Converter::initialize()
 {
-    QLibrary libopencc("opencc");
+    initialized = true;
+    QLibrary libopencc;
+    libopencc.setFileNameAndVersion("opencc", "1.0.0");
 
     if (!libopencc.load())
         return;
@@ -38,7 +40,6 @@ void Converter::initialize()
     if (opencc_perror == NULL)
         return;
 
-    initialized = true;
     s_loaded = true;
 }
 

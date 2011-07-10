@@ -13,7 +13,10 @@ const char * (*CharsetDetector::uchardet_get_charset)(uchardet_t);
 
 void CharsetDetector::initialize()
 {
-    QLibrary loader("uchardet");
+    initialized = true;
+    QLibrary loader;
+    loader.setFileNameAndVersion("uchardet", "0.0.0");
+
     if (!loader.load())
         return;
 
@@ -30,7 +33,6 @@ void CharsetDetector::initialize()
     if (NULL == (uchardet_get_charset = (const char * (*)(uchardet_t)) loader.resolve("uchardet_get_charset")))
         return;
 
-    initialized = true;
     s_loaded = true;
 }
 
