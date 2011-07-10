@@ -6,7 +6,7 @@ bool CharsetDetector::initialized = false;
 bool CharsetDetector::s_loaded = false;
 uchardet_t (*CharsetDetector::uchardet_new)();
 void (*CharsetDetector::uchardet_delete)(uchardet_t);
-void (*CharsetDetector::uchardet_handle_data)(uchardet_t, const char *, size_t);
+int (*CharsetDetector::uchardet_handle_data)(uchardet_t, const char *, size_t);
 void (*CharsetDetector::uchardet_data_end)(uchardet_t);
 void (*CharsetDetector::uchardet_reset)(uchardet_t);
 const char * (*CharsetDetector::uchardet_get_charset)(uchardet_t);
@@ -24,7 +24,7 @@ void CharsetDetector::initialize()
         return;
     if (NULL == (uchardet_delete = (void (*)(uchardet_t)) loader.resolve("uchardet_delete")))
         return;
-    if (NULL == (uchardet_handle_data = (void (*)(uchardet_t, const char *, size_t)) loader.resolve("uchardet_handle_data")))
+    if (NULL == (uchardet_handle_data = (int (*)(uchardet_t, const char *, size_t)) loader.resolve("uchardet_handle_data")))
         return;
     if (NULL == (uchardet_data_end = (void (*)(uchardet_t)) loader.resolve("uchardet_data_end")))
         return;

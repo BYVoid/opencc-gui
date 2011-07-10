@@ -20,7 +20,7 @@ private:
     static bool s_loaded;
     static uchardet_t (*uchardet_new)();
     static void (*uchardet_delete)(uchardet_t);
-    static void (*uchardet_handle_data)(uchardet_t, const char *, size_t);
+    static int (*uchardet_handle_data)(uchardet_t, const char *, size_t);
     static void (*uchardet_data_end)(uchardet_t);
     static void (*uchardet_reset)(uchardet_t);
     static const char * (*uchardet_get_charset)(uchardet_t);
