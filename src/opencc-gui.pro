@@ -33,7 +33,7 @@ FORMS    += mainwindow.ui \
     aboutdialog.ui \
     convertfiledialog.ui
 
-TRANSLATIONS += zhs.ts \
-    zht.ts
+TRANSLATIONS += ../l10n/zhs.ts \
+    ../l10n/zht.ts
 
 OTHER_FILES +=
