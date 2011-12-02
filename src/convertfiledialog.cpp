@@ -2,6 +2,7 @@
 #include "ui_convertfiledialog.h"
 #include "fileselector.h"
 #include "converter.h"
+#include "opencc_configs.h"
 
 #include <QFile>
 #include <QTextStream>
@@ -14,6 +15,8 @@ ConvertFileDialog::ConvertFileDialog(QWidget *parent) :
     textreader(new TextReader)
 {
     ui->setupUi(this);
+    for (int i = 0; i < OPENCC_CONFIGS_COUNT; ++i)
+        ui->cbConfig->addItem(opencc_configs[i].title, opencc_configs[i].filename);
 }
 
 ConvertFileDialog::~ConvertFileDialog()
@@ -47,9 +50,16 @@ void ConvertFileDialog::convertSlot()
         return;
     }
 
-    const char *config = ui->rbToChs->isChecked()? OPENCC_DEFAULT_CONFIG_TRAD_TO_SIMP
-                                                 : OPENCC_DEFAULT_CONFIG_SIMP_TO_TRAD;
-    Converter conv(config);
+    QString config_file = ui->cbConfig->itemData(ui->cbConfig->currentIndex()).toString();
+    QByteArray config_file_utf8 = config_file.toUtf8();
+
+    Converter conv(config_file_utf8.data());
+    if (!conv.config_loaded())
+    {
+        QMessageBox::critical(this, tr("OpenCC"), tr("Failed to load opencc configuration."));
+        return;
+    }
+
     QString txt_in = textreader->readAll(input_file_name);
     QString txt_out = conv.convert(txt_in);
     QByteArray txt_out_utf8 = txt_out.toUtf8();
