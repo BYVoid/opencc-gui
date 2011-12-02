@@ -45,15 +45,4 @@ RESOURCES += \
 
 ICON = res/opencc.icns
 
-
-
-
-
-
-
-
-
-
-
-
-
+RC_FILE = win.rc
