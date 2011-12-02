@@ -10,6 +10,9 @@
     <height>480</height>
    </rect>
   </property>
+  <property name="acceptDrops">
+   <bool>true</bool>
+  </property>
   <property name="windowTitle">
    <string>Open Chinese Convert</string>
   </property>
@@ -35,7 +38,11 @@
        </layout>
       </item>
       <item>
-       <widget class="TextEditor" name="textEdit"/>
+       <widget class="TextEditor" name="textEdit">
+        <property name="acceptDrops">
+         <bool>false</bool>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>

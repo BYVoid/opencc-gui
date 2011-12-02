@@ -34,6 +34,10 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+protected:
+    void dragEnterEvent(QDragEnterEvent *event);
+    void dropEvent(QDropEvent *event);
+
 private:
     enum Language {ENG, ZHT, ZHS};
     Ui::MainWindow *ui;

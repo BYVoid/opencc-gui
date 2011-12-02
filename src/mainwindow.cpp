@@ -29,6 +29,7 @@
 #include <QTextCodec>
 #include <QLocale>
 #include <QMessageBox>
+#include <QUrl>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -176,4 +177,23 @@ void MainWindow::changeLanguage()
         ui->actionEnglish->setChecked(true);
     }
     ui->retranslateUi(this);
+}
+
+void MainWindow::dragEnterEvent(QDragEnterEvent *event)
+{
+    if (event->mimeData()->hasUrls())
+    {
+        event->acceptProposedAction();
+    }
+}
+
+void MainWindow::dropEvent(QDropEvent *event)
+{
+    QList<QUrl> urls = event->mimeData()->urls();
+    if (urls.isEmpty())
+        return;
+    QString filename = urls.first().toLocalFile();
+    if (filename.isEmpty())
+        return;
+    ui->textEdit->loadFile(filename);
 }

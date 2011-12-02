@@ -15,8 +15,6 @@ public:
 
 private:
     TextReader * textreader;
-    void dragEnterEvent(QDragEnterEvent *event);
-    void dropEvent(QDropEvent *event);
 
 signals:
 
