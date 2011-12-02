@@ -2,7 +2,6 @@
 #include "ui_convertfiledialog.h"
 #include "fileselector.h"
 #include "converter.h"
-#include "opencc_configs.h"
 
 #include <QFile>
 #include <QTextStream>
@@ -15,8 +14,18 @@ ConvertFileDialog::ConvertFileDialog(QWidget *parent) :
     textreader(new TextReader)
 {
     ui->setupUi(this);
-    for (int i = 0; i < OPENCC_CONFIGS_COUNT; ++i)
-        ui->cbConfig->addItem(opencc_configs[i].title, opencc_configs[i].filename);
+    ui->cbConfig->addItem(tr("Simplified to Traditional"), "zhs2zht.ini");
+    ui->cbConfig->addItem(tr("Traditional to Simplified"), "zht2zhs.ini");
+    ui->cbConfig->addItem(tr("Simplified to Taiwan"), "zhs2zhtw_vp.ini");
+    ui->cbConfig->addItem(tr("Simplified to Taiwan (only variants)"), "zhs2zhtw_v.ini");
+    ui->cbConfig->addItem(tr("Simplified to Taiwan (only phrases)"), "zhs2zhtw_p.ini");
+    ui->cbConfig->addItem(tr("Traditional to Taiwan"), "zht2zhtw_vp.ini");
+    ui->cbConfig->addItem(tr("Traditional to Taiwan (only variants)"), "zht2zhtw_v.ini");
+    ui->cbConfig->addItem(tr("Traditional to Taiwan (only phrases)"), "zht2zhtw_p.ini");
+    ui->cbConfig->addItem(tr("Taiwan to Traditional"), "zhtw2zht.ini");
+    ui->cbConfig->addItem(tr("Taiwan to Simplified"), "zhtw2zhs.ini");
+    ui->cbConfig->addItem(tr("Taiwan to Mainland China (Simplified)"), "zhtw2zhcn_s.ini");
+    ui->cbConfig->addItem(tr("Taiwan to Mainland China (Traditional)"), "zhtw2zhcn_t.ini");
 }
 
 ConvertFileDialog::~ConvertFileDialog()

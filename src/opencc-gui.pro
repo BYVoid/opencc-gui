@@ -12,13 +12,12 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     aboutdialog.cpp \
-    convertfiledialog.cpp \
     converter.cpp \
     fileselector.cpp \
     charsetdetector.cpp \
     textreader.cpp \
     texteditor.cpp \
-    opencc_configs.cpp
+    convertfiledialog.cpp
 
 HEADERS  += mainwindow.h \
     opencc.h \
@@ -30,8 +29,7 @@ HEADERS  += mainwindow.h \
     uchardet.h \
     charsetdetector.h \
     textreader.h \
-    texteditor.h \
-    opencc_configs.h
+    texteditor.h
 
 FORMS    += mainwindow.ui \
     aboutdialog.ui \
@@ -46,6 +44,14 @@ RESOURCES += \
     icon.qrc
 
 ICON = res/opencc.icns
+
+
+
+
+
+
+
+
 
 
 
