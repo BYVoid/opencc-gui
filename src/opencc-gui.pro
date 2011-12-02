@@ -37,3 +37,9 @@ TRANSLATIONS += ../l10n/zhs.ts \
     ../l10n/zht.ts
 
 OTHER_FILES +=
+
+RESOURCES += \
+    icon.qrc
+
+ICON = res/opencc.icns
+
