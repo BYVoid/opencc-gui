@@ -23,21 +23,7 @@
       <item>
        <layout class="QHBoxLayout" name="hbox1">
         <item>
-         <widget class="QRadioButton" name="rbToCht">
-          <property name="text">
-           <string>From Simplified to Tradtional</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QRadioButton" name="rbToChs">
-          <property name="text">
-           <string>From Tradtional to Simplified</string>
-          </property>
-         </widget>
+         <widget class="QComboBox" name="cbConfig"/>
         </item>
         <item>
          <widget class="QPushButton" name="btnConvert">
@@ -61,7 +47,7 @@
      <x>0</x>
      <y>0</y>
      <width>640</width>
-     <height>23</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">

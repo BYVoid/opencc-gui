@@ -11,11 +11,13 @@ public:
     ~Converter();
     void setConfig(const char * config);
     QString convert(QString & text);
+    bool config_loaded();
 
     static bool loaded();
 
 private:
     opencc_t handle;
+    bool m_loaded;
 
     static bool initialized;
     static bool s_loaded;

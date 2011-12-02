@@ -45,6 +45,8 @@ private:
     Language language;
     void setDefaultLanguage();
     void changeLanguage();
+    void dragEnterEvent(QDragEnterEvent *event);
+    void dropEvent(QDropEvent *event);
 
 public slots:
     void convertSlot();

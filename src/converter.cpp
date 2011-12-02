@@ -57,6 +57,7 @@ Converter::Converter(const char * config)
         initialize();
 
     handle = NULL;
+    m_loaded = false;
     setConfig(config);
 }
 
@@ -65,7 +66,7 @@ Converter::~Converter()
     if (!s_loaded)
         return;
 
-    if (handle != NULL)
+    if (handle != NULL && handle != (opencc_t) -1)
         opencc_close(handle);
 }
 
@@ -81,8 +82,14 @@ void Converter::setConfig(const char *config)
     if (handle == (opencc_t) -1)
     {
         opencc_perror("Opencc loading:");
-        return; //TODO failed
+        return;
     }
+    m_loaded = true;
+}
+
+bool Converter::config_loaded()
+{
+    return m_loaded;
 }
 
 QString Converter::convert(QString & text)
