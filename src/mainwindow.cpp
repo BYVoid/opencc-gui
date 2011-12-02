@@ -33,14 +33,11 @@
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
-    trans(new QTranslator),
-    textreader(new TextReader)
+    trans(new QTranslator)
 {
     ui->setupUi(this);
-    setDefaultLanguage();
 
-    setAcceptDrops(true);
-    ui->textEdit->setAcceptDrops(true);
+    setDefaultLanguage();
     ui->cbConfig->addItem(tr("Simplified to Traditional"), "zhs2zht.ini");
     ui->cbConfig->addItem(tr("Traditional to Simplified"), "zht2zhs.ini");
     ui->cbConfig->addItem(tr("Simplified to Taiwan"), "zhs2zhtw_vp.ini");
@@ -59,7 +56,6 @@ MainWindow::~MainWindow()
 {
     delete ui;
     delete trans;
-    delete textreader;
 }
 
 void MainWindow::convertSlot()
@@ -90,7 +86,7 @@ void MainWindow::loadSlot()
     FileSelector fs(this);
     if (fs.open() == QDialog::Accepted)
     {
-        ui->textEdit->setPlainText(textreader->readAll(fs.selectedFile()));
+        ui->textEdit->loadFile(fs.selectedFile());
     }
 }
 
@@ -180,16 +176,4 @@ void MainWindow::changeLanguage()
         ui->actionEnglish->setChecked(true);
     }
     ui->retranslateUi(this);
-}
-
-void MainWindow::dragEnterEvent(QDragEnterEvent *event)
-{
-    if (event->mimeData()->hasFormat("text/plain"))
-        event->acceptProposedAction();
-}
-
-void MainWindow::dropEvent(QDropEvent *event)
-{
-    QMessageBox::critical(this, tr("OpenCC"), event->mimeData()->text());
-    event->acceptProposedAction();
 }

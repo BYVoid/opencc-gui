@@ -16,7 +16,8 @@ SOURCES += main.cpp\
     converter.cpp \
     fileselector.cpp \
     charsetdetector.cpp \
-    textreader.cpp
+    textreader.cpp \
+    texteditor.cpp
 
 HEADERS  += mainwindow.h \
     opencc.h \
@@ -27,7 +28,8 @@ HEADERS  += mainwindow.h \
     fileselector.h \
     uchardet.h \
     charsetdetector.h \
-    textreader.h
+    textreader.h \
+    texteditor.h
 
 FORMS    += mainwindow.ui \
     aboutdialog.ui \
@@ -42,4 +44,6 @@ RESOURCES += \
     icon.qrc
 
 ICON = res/opencc.icns
+
+
 

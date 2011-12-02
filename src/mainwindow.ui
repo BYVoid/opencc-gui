@@ -35,7 +35,7 @@
        </layout>
       </item>
       <item>
-       <widget class="QPlainTextEdit" name="textEdit"/>
+       <widget class="TextEditor" name="textEdit"/>
       </item>
      </layout>
     </item>
@@ -215,6 +215,13 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>TextEditor</class>
+   <extends>QPlainTextEdit</extends>
+   <header>texteditor.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections>
   <connection>
