@@ -1,4 +1,4 @@
-mkdir build --parent &&
+mkdir build -p &&
 cd build &&
 qmake ../src/opencc-gui.pro &&
 make &&

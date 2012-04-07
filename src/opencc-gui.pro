@@ -45,4 +45,6 @@ RESOURCES += \
 
 ICON = res/opencc.icns
 
+QMAKE_INFO_PLIST = res/opencc.plist
+
 RC_FILE = win.rc

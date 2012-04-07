@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
+<plist version="0.9">
+<dict>
+	<key>CFBundleName</key>  
+	<string>OpenCC</string>  
+	<key>CFBundleIconFile</key>
+	<string>opencc.icns</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleGetInfoString</key>
+	<string>Open Chinese Convert</string>
+	<key>CFBundleExecutable</key>
+	<string>opencc-gui</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.byvoid.opencc</string>
+</dict>
+</plist>
