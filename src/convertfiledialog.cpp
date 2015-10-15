@@ -80,7 +80,7 @@ void ConvertFileDialog::convertSlot()
 void ConvertFileDialog::openSlot()
 {
     FileSelector fs(this);
-    if (fs.open() == QDialog::Accepted)
+    if (fs.openDialog() == QDialog::Accepted)
     {
         QString file_name = fs.selectedFile();
         ui->leInput->setText(file_name);

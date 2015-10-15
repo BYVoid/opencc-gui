@@ -30,6 +30,7 @@
 #include <QLocale>
 #include <QMessageBox>
 #include <QUrl>
+#include <QMimeData>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -72,7 +73,7 @@ void MainWindow::convertSlot()
 void MainWindow::loadSlot()
 {
     FileSelector fs(this);
-    if (fs.open() == QDialog::Accepted)
+    if (fs.openDialog() == QDialog::Accepted)
     {
         ui->textEdit->loadFile(fs.selectedFile());
     }

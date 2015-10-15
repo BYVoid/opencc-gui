@@ -328,12 +328,12 @@ http://opencc.googlecode.com
         <translation>简体中文</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="169"/>
+        <location filename="../src/mainwindow.cpp" line="170"/>
         <source>Simplified to Traditional</source>
         <translation>简体到繁体</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="170"/>
+        <location filename="../src/mainwindow.cpp" line="171"/>
         <source>Traditional to Simplified</source>
         <translation>繁体到简体</translation>
     </message>
@@ -378,58 +378,58 @@ http://opencc.googlecode.com
         <translation type="obsolete">台湾标准到中国大陆标准(繁体)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="53"/>
-        <location filename="../src/mainwindow.cpp" line="63"/>
+        <location filename="../src/mainwindow.cpp" line="54"/>
+        <location filename="../src/mainwindow.cpp" line="64"/>
         <source>OpenCC</source>
         <translation>开放中文转换</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="53"/>
+        <location filename="../src/mainwindow.cpp" line="54"/>
         <source>Failed to load opencc.</source>
         <translation>opencc载入失败。</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="63"/>
+        <location filename="../src/mainwindow.cpp" line="64"/>
         <source>Failed to load opencc configuration.</source>
         <translation>无法读取OpenCC配置文件。</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="171"/>
+        <location filename="../src/mainwindow.cpp" line="172"/>
         <source>Simplified to Traditional (Taiwan Standard)</source>
         <translation>简体到台湾正体</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="172"/>
+        <location filename="../src/mainwindow.cpp" line="173"/>
         <source>Traditional (Taiwan Standard) to Simplified</source>
         <translation>台湾正体到简体</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="173"/>
+        <location filename="../src/mainwindow.cpp" line="174"/>
         <source>Simplified to Traditional (Hong Kong Standard)</source>
         <translation>简体到香港繁体（香港小学学习字词表标准）</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="174"/>
+        <location filename="../src/mainwindow.cpp" line="175"/>
         <source>Traditional (Hong Kong Standard) to Simplified</source>
         <translation>香港繁体（香港小学学习字词表标准）到简体</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="175"/>
+        <location filename="../src/mainwindow.cpp" line="176"/>
         <source>Simplified to Traditional (Taiwan Standard) with Taiwanese idiom</source>
         <translation>简体到繁体（台湾正体标准）并转换为台湾常用词汇</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="176"/>
+        <location filename="../src/mainwindow.cpp" line="177"/>
         <source>Traditional (Taiwan Standard) to Simplified with Mainland idiom</source>
         <translation>繁体（台湾正体标准）到简体并转换为中国大陆常用词汇</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="177"/>
+        <location filename="../src/mainwindow.cpp" line="178"/>
         <source>Traditional (OpenCC Standard) to Taiwan Standard</source>
         <translation>繁体（OpenCC 标准）到台湾正体</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="178"/>
+        <location filename="../src/mainwindow.cpp" line="179"/>
         <source>Traditional (OpenCC Standard) to Hong Kong Standard</source>
         <translation>繁体（OpenCC 标准）到香港繁体（香港小学学习字词表标准）</translation>
     </message>
