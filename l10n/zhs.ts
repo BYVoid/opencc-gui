@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="zh" sourcelanguage="en">
+<TS version="2.1" language="zh" sourcelanguage="en">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -75,96 +75,126 @@ http://opencc.googlecode.com
         <translation type="obsolete">繁体到简体</translation>
     </message>
     <message>
-        <location filename="../src/convertfiledialog.cpp" line="18"/>
+        <location filename="../src/convertfiledialog.cpp" line="17"/>
         <source>Simplified to Traditional</source>
         <translation>简体到繁体</translation>
     </message>
     <message>
-        <location filename="../src/convertfiledialog.cpp" line="19"/>
+        <location filename="../src/convertfiledialog.cpp" line="18"/>
         <source>Traditional to Simplified</source>
         <translation>繁体到简体</translation>
     </message>
     <message>
-        <location filename="../src/convertfiledialog.cpp" line="20"/>
         <source>Simplified to Taiwan</source>
-        <translation>简体到台湾标准</translation>
+        <translation type="obsolete">简体到台湾标准</translation>
+    </message>
+    <message>
+        <source>Simplified to Taiwan (only variants)</source>
+        <translation type="obsolete">简体到台湾标准(只转换异体字)</translation>
+    </message>
+    <message>
+        <source>Simplified to Taiwan (only phrases)</source>
+        <translation type="obsolete">简体到台湾标准(只转换常用词汇)</translation>
+    </message>
+    <message>
+        <source>Traditional to Taiwan</source>
+        <translation type="obsolete">繁体到台湾标准</translation>
+    </message>
+    <message>
+        <source>Traditional to Taiwan (only variants)</source>
+        <translation type="obsolete">繁体到台湾标准(只转换异体字)</translation>
+    </message>
+    <message>
+        <source>Traditional to Taiwan (only phrases)</source>
+        <translation type="obsolete">繁体到台湾标准(只转换常用词汇)</translation>
+    </message>
+    <message>
+        <source>Taiwan to Traditional</source>
+        <translation type="obsolete">台湾标准到繁体</translation>
+    </message>
+    <message>
+        <source>Taiwan to Simplified</source>
+        <translation type="obsolete">台湾标准到简体</translation>
+    </message>
+    <message>
+        <source>Taiwan to Mainland China (Simplified)</source>
+        <translation type="obsolete">台湾标准到中国大陆标准(简体)</translation>
+    </message>
+    <message>
+        <source>Taiwan to Mainland China (Traditional)</source>
+        <translation type="obsolete">台湾标准到中国大陆标准(繁体)</translation>
+    </message>
+    <message>
+        <location filename="../src/convertfiledialog.cpp" line="19"/>
+        <source>Simplified to Traditional (Taiwan Standard)</source>
+        <translation>简体到台湾正体</translation>
+    </message>
+    <message>
+        <location filename="../src/convertfiledialog.cpp" line="20"/>
+        <source>Traditional (Taiwan Standard) to Simplified</source>
+        <translation>台湾正体到简体</translation>
     </message>
     <message>
         <location filename="../src/convertfiledialog.cpp" line="21"/>
-        <source>Simplified to Taiwan (only variants)</source>
-        <translation>简体到台湾标准(只转换异体字)</translation>
+        <source>Simplified to Traditional (Hong Kong Standard)</source>
+        <translation>简体到香港繁体（香港小学学习字词表标准）</translation>
     </message>
     <message>
         <location filename="../src/convertfiledialog.cpp" line="22"/>
-        <source>Simplified to Taiwan (only phrases)</source>
-        <translation>简体到台湾标准(只转换常用词汇)</translation>
+        <source>Traditional (Hong Kong Standard) to Simplified</source>
+        <translation>香港繁体（香港小学学习字词表标准）到简体</translation>
     </message>
     <message>
         <location filename="../src/convertfiledialog.cpp" line="23"/>
-        <source>Traditional to Taiwan</source>
-        <translation>繁体到台湾标准</translation>
+        <source>Simplified to Traditional (Taiwan Standard) with Taiwanese idiom</source>
+        <translation>简体到繁体（台湾正体标准）并转换为台湾常用词汇</translation>
     </message>
     <message>
         <location filename="../src/convertfiledialog.cpp" line="24"/>
-        <source>Traditional to Taiwan (only variants)</source>
-        <translation>繁体到台湾标准(只转换异体字)</translation>
+        <source>Traditional (Taiwan Standard) to Simplified with Mainland idiom</source>
+        <translation>繁体（台湾正体标准）到简体并转换为中国大陆常用词汇</translation>
     </message>
     <message>
         <location filename="../src/convertfiledialog.cpp" line="25"/>
-        <source>Traditional to Taiwan (only phrases)</source>
-        <translation>繁体到台湾标准(只转换常用词汇)</translation>
+        <source>Traditional (OpenCC Standard) to Taiwan Standard</source>
+        <translation>繁体（OpenCC 标准）到台湾正体</translation>
     </message>
     <message>
         <location filename="../src/convertfiledialog.cpp" line="26"/>
-        <source>Taiwan to Traditional</source>
-        <translation>台湾标准到繁体</translation>
+        <source>Traditional (OpenCC Standard) to Hong Kong Standard</source>
+        <translation>繁体（OpenCC 标准）到香港繁体（香港小学学习字词表标准）</translation>
     </message>
     <message>
-        <location filename="../src/convertfiledialog.cpp" line="27"/>
-        <source>Taiwan to Simplified</source>
-        <translation>台湾标准到简体</translation>
-    </message>
-    <message>
-        <location filename="../src/convertfiledialog.cpp" line="28"/>
-        <source>Taiwan to Mainland China (Simplified)</source>
-        <translation>台湾标准到中国大陆标准(简体)</translation>
-    </message>
-    <message>
-        <location filename="../src/convertfiledialog.cpp" line="29"/>
-        <source>Taiwan to Mainland China (Traditional)</source>
-        <translation>台湾标准到中国大陆标准(繁体)</translation>
-    </message>
-    <message>
-        <location filename="../src/convertfiledialog.cpp" line="42"/>
-        <location filename="../src/convertfiledialog.cpp" line="50"/>
-        <location filename="../src/convertfiledialog.cpp" line="59"/>
-        <location filename="../src/convertfiledialog.cpp" line="69"/>
-        <location filename="../src/convertfiledialog.cpp" line="80"/>
+        <location filename="../src/convertfiledialog.cpp" line="39"/>
+        <location filename="../src/convertfiledialog.cpp" line="47"/>
+        <location filename="../src/convertfiledialog.cpp" line="56"/>
+        <location filename="../src/convertfiledialog.cpp" line="66"/>
+        <location filename="../src/convertfiledialog.cpp" line="77"/>
         <source>OpenCC</source>
         <translation>开放中文转换</translation>
     </message>
     <message>
-        <location filename="../src/convertfiledialog.cpp" line="42"/>
+        <location filename="../src/convertfiledialog.cpp" line="39"/>
         <source>Failed to load opencc.</source>
         <translation>opencc载入失败。</translation>
     </message>
     <message>
-        <location filename="../src/convertfiledialog.cpp" line="50"/>
+        <location filename="../src/convertfiledialog.cpp" line="47"/>
         <source>Input file not readable.</source>
         <translation>无法读取输入文件。</translation>
     </message>
     <message>
-        <location filename="../src/convertfiledialog.cpp" line="59"/>
+        <location filename="../src/convertfiledialog.cpp" line="56"/>
         <source>Output file not writable.</source>
         <translation>无法读取输出文件。</translation>
     </message>
     <message>
-        <location filename="../src/convertfiledialog.cpp" line="69"/>
+        <location filename="../src/convertfiledialog.cpp" line="66"/>
         <source>Failed to load opencc configuration.</source>
         <translation>无法读取OpenCC配置文件。</translation>
     </message>
     <message>
-        <location filename="../src/convertfiledialog.cpp" line="80"/>
+        <location filename="../src/convertfiledialog.cpp" line="77"/>
         <source>Successfully converted.</source>
         <translation>转换成功。</translation>
     </message>
@@ -298,80 +328,110 @@ http://opencc.googlecode.com
         <translation>简体中文</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="41"/>
+        <location filename="../src/mainwindow.cpp" line="169"/>
         <source>Simplified to Traditional</source>
         <translation>简体到繁体</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="42"/>
+        <location filename="../src/mainwindow.cpp" line="170"/>
         <source>Traditional to Simplified</source>
         <translation>繁体到简体</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="43"/>
         <source>Simplified to Taiwan</source>
-        <translation>简体到台湾标准</translation>
+        <translation type="obsolete">简体到台湾标准</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="44"/>
         <source>Simplified to Taiwan (only variants)</source>
-        <translation>简体到台湾标准(只转换异体字)</translation>
+        <translation type="obsolete">简体到台湾标准(只转换异体字)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="45"/>
         <source>Simplified to Taiwan (only phrases)</source>
-        <translation>简体到台湾标准(只转换常用词汇)</translation>
+        <translation type="obsolete">简体到台湾标准(只转换常用词汇)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="46"/>
         <source>Traditional to Taiwan</source>
-        <translation>繁体到台湾标准</translation>
+        <translation type="obsolete">繁体到台湾标准</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="47"/>
         <source>Traditional to Taiwan (only variants)</source>
-        <translation>繁体到台湾标准(只转换异体字)</translation>
+        <translation type="obsolete">繁体到台湾标准(只转换异体字)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="48"/>
         <source>Traditional to Taiwan (only phrases)</source>
-        <translation>繁体到台湾标准(只转换常用词汇)</translation>
+        <translation type="obsolete">繁体到台湾标准(只转换常用词汇)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="49"/>
         <source>Taiwan to Traditional</source>
-        <translation>台湾标准到繁体</translation>
+        <translation type="obsolete">台湾标准到繁体</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="50"/>
         <source>Taiwan to Simplified</source>
-        <translation>台湾标准到简体</translation>
+        <translation type="obsolete">台湾标准到简体</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="51"/>
         <source>Taiwan to Mainland China (Simplified)</source>
-        <translation>台湾标准到中国大陆标准(简体)</translation>
+        <translation type="obsolete">台湾标准到中国大陆标准(简体)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="52"/>
         <source>Taiwan to Mainland China (Traditional)</source>
-        <translation>台湾标准到中国大陆标准(繁体)</translation>
+        <translation type="obsolete">台湾标准到中国大陆标准(繁体)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="65"/>
-        <location filename="../src/mainwindow.cpp" line="75"/>
+        <location filename="../src/mainwindow.cpp" line="53"/>
+        <location filename="../src/mainwindow.cpp" line="63"/>
         <source>OpenCC</source>
         <translation>开放中文转换</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="65"/>
+        <location filename="../src/mainwindow.cpp" line="53"/>
         <source>Failed to load opencc.</source>
         <translation>opencc载入失败。</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="75"/>
+        <location filename="../src/mainwindow.cpp" line="63"/>
         <source>Failed to load opencc configuration.</source>
         <translation>无法读取OpenCC配置文件。</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="171"/>
+        <source>Simplified to Traditional (Taiwan Standard)</source>
+        <translation>简体到台湾正体</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="172"/>
+        <source>Traditional (Taiwan Standard) to Simplified</source>
+        <translation>台湾正体到简体</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="173"/>
+        <source>Simplified to Traditional (Hong Kong Standard)</source>
+        <translation>简体到香港繁体（香港小学学习字词表标准）</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="174"/>
+        <source>Traditional (Hong Kong Standard) to Simplified</source>
+        <translation>香港繁体（香港小学学习字词表标准）到简体</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="175"/>
+        <source>Simplified to Traditional (Taiwan Standard) with Taiwanese idiom</source>
+        <translation>简体到繁体（台湾正体标准）并转换为台湾常用词汇</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="176"/>
+        <source>Traditional (Taiwan Standard) to Simplified with Mainland idiom</source>
+        <translation>繁体（台湾正体标准）到简体并转换为中国大陆常用词汇</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="177"/>
+        <source>Traditional (OpenCC Standard) to Taiwan Standard</source>
+        <translation>繁体（OpenCC 标准）到台湾正体</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="178"/>
+        <source>Traditional (OpenCC Standard) to Hong Kong Standard</source>
+        <translation>繁体（OpenCC 标准）到香港繁体（香港小学学习字词表标准）</translation>
     </message>
 </context>
 <context>
