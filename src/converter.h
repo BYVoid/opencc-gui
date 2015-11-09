@@ -24,10 +24,10 @@ private:
     static opencc_t (*opencc_open)(const char *);
     static int (*opencc_close)(opencc_t);
     static char * (*opencc_convert_utf8)(opencc_t, const char *, size_t);
-    static opencc_error (*opencc_errno)(void);
-    static void (*opencc_perror)(const char * spec);
+    static const char* (*opencc_error)(void);
 
     static void initialize();
+    static void perror(const char* );
 };
 
 #endif // CONVERTER_H

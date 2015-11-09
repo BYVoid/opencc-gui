@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core widgets
 
 TARGET = opencc-gui
 TEMPLATE = app

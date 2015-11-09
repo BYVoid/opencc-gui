@@ -30,6 +30,7 @@
 #include <QLocale>
 #include <QMessageBox>
 #include <QUrl>
+#include <QMimeData>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -72,7 +73,7 @@ void MainWindow::convertSlot()
 void MainWindow::loadSlot()
 {
     FileSelector fs(this);
-    if (fs.open() == QDialog::Accepted)
+    if (fs.openDialog() == QDialog::Accepted)
     {
         ui->textEdit->loadFile(fs.selectedFile());
     }
@@ -166,18 +167,16 @@ void MainWindow::changeLanguage()
     ui->retranslateUi(this);
 
     ui->cbConfig->clear();
-    ui->cbConfig->addItem(tr("Simplified to Traditional"), "zhs2zht.ini");
-    ui->cbConfig->addItem(tr("Traditional to Simplified"), "zht2zhs.ini");
-    ui->cbConfig->addItem(tr("Simplified to Taiwan"), "zhs2zhtw_vp.ini");
-    ui->cbConfig->addItem(tr("Simplified to Taiwan (only variants)"), "zhs2zhtw_v.ini");
-    ui->cbConfig->addItem(tr("Simplified to Taiwan (only phrases)"), "zhs2zhtw_p.ini");
-    ui->cbConfig->addItem(tr("Traditional to Taiwan"), "zht2zhtw_vp.ini");
-    ui->cbConfig->addItem(tr("Traditional to Taiwan (only variants)"), "zht2zhtw_v.ini");
-    ui->cbConfig->addItem(tr("Traditional to Taiwan (only phrases)"), "zht2zhtw_p.ini");
-    ui->cbConfig->addItem(tr("Taiwan to Traditional"), "zhtw2zht.ini");
-    ui->cbConfig->addItem(tr("Taiwan to Simplified"), "zhtw2zhs.ini");
-    ui->cbConfig->addItem(tr("Taiwan to Mainland China (Simplified)"), "zhtw2zhcn_s.ini");
-    ui->cbConfig->addItem(tr("Taiwan to Mainland China (Traditional)"), "zhtw2zhcn_t.ini");
+    ui->cbConfig->addItem(tr("Simplified to Traditional"), "s2t.json");
+    ui->cbConfig->addItem(tr("Traditional to Simplified"), "t2s.json");
+    ui->cbConfig->addItem(tr("Simplified to Traditional (Taiwan Standard)"), "s2tw.json");
+    ui->cbConfig->addItem(tr("Traditional (Taiwan Standard) to Simplified"), "tw2s.json");
+    ui->cbConfig->addItem(tr("Simplified to Traditional (Hong Kong Standard)"), "s2hk.json");
+    ui->cbConfig->addItem(tr("Traditional (Hong Kong Standard) to Simplified"), "hk2s.json");
+    ui->cbConfig->addItem(tr("Simplified to Traditional (Taiwan Standard) with Taiwanese idiom"), "s2twp.json");
+    ui->cbConfig->addItem(tr("Traditional (Taiwan Standard) to Simplified with Mainland idiom"), "tw2sp.json");
+    ui->cbConfig->addItem(tr("Traditional (OpenCC Standard) to Taiwan Standard"), "t2tw.json");
+    ui->cbConfig->addItem(tr("Traditional (OpenCC Standard) to Hong Kong Standard"), "t2hk.json");
 }
 
 void MainWindow::dragEnterEvent(QDragEnterEvent *event)

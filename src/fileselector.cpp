@@ -7,7 +7,7 @@ FileSelector::FileSelector(QWidget *parent) :
     setNameFilter(filters);
 }
 
-QDialog::DialogCode FileSelector::open()
+QDialog::DialogCode FileSelector::openDialog()
 {
     setFileMode(QFileDialog::ExistingFile);
     setAcceptMode(QFileDialog::AcceptOpen);

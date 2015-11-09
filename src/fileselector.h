@@ -8,7 +8,7 @@ class FileSelector : private QFileDialog
     Q_OBJECT
 public:
     explicit FileSelector(QWidget *parent = 0);
-    DialogCode open();
+    DialogCode openDialog();
     DialogCode save();
     QString selectedFile();
 
