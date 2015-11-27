@@ -431,7 +431,7 @@ http://opencc.googlecode.com
     <message>
         <location filename="../src/mainwindow.cpp" line="179"/>
         <source>Traditional (OpenCC Standard) to Hong Kong Standard</source>
-        <translation>繁體（OpenCC 標準）到香港繁體（香港小學學習字詞表標準</translation>
+        <translation>繁體（OpenCC 標準）到香港繁體（香港小學學習字詞表標準）</translation>
     </message>
 </context>
 <context>
