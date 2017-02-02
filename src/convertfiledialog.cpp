@@ -49,14 +49,6 @@ void ConvertFileDialog::convertSlot()
     }
     input_file.close();
 
-    QString output_file_name = ui->leOutput->text();
-    QFile output_file(output_file_name, this);
-    if (!output_file.open(QFile::WriteOnly))
-    {
-        QMessageBox::critical(this, tr("OpenCC"), tr("Output file not writable."));
-        return;
-    }
-
     QString config_file = ui->cbConfig->itemData(ui->cbConfig->currentIndex()).toString();
     QByteArray config_file_utf8 = config_file.toUtf8();
 
@@ -68,6 +60,15 @@ void ConvertFileDialog::convertSlot()
     }
 
     QString txt_in = textreader->readAll(input_file_name);
+    
+    QString output_file_name = ui->leOutput->text();
+    QFile output_file(output_file_name, this);
+    if (!output_file.open(QFile::WriteOnly))
+    {
+        QMessageBox::critical(this, tr("OpenCC"), tr("Output file not writable."));
+        return;
+    }
+    
     QString txt_out = conv.convert(txt_in);
     QByteArray txt_out_utf8 = txt_out.toUtf8();
 
